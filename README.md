@@ -1,7 +1,12 @@
-# Atlantic.net Python Bindings
+# Atlantic.net Cloud API Python Bindings
 
-For definitive documentation on how the api works please visit:
+Atlantic.net API description is there:
 https://www.atlantic.net/docs/api/
+
+## Install
+pip install . --user
+or
+sudo pip install .
 
 ## License
 
