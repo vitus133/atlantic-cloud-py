@@ -28,7 +28,7 @@ class AtlanticServer(AtlanticBase):
 
     def list(self):
         """
-        List currently active cloud servers.
+        List my cloud servers.
 
         Link: https://www.atlantic.net/docs/api/?shell#list-instances
         """
