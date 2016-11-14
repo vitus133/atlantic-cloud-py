@@ -1,10 +1,9 @@
 import base64
 import hashlib
 import hmac
-import requests
-import sys
 import time
 import uuid
+import requests
 
 API_VERSION = "2010-12-30"
 API_ENDPOINT = "https://cloudapi.atlantic.net/"
@@ -34,8 +33,8 @@ class AtlanticBase(object):
         your API private key.
         """
         string_to_sign = "%s%s" % (time_since_epoch, random_uuid)
-        m = hmac.new(key=self.private_key, msg=string_to_sign, digestmod=hashlib.sha256)
-        signature = base64.b64encode(m.digest())
+        sig = hmac.new(key=self.private_key, msg=string_to_sign, digestmod=hashlib.sha256)
+        signature = base64.b64encode(sig.digest())
         return signature
 
     def request(self, params):
