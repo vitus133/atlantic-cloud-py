@@ -29,11 +29,21 @@ vIP  ='vm_ip_address'
 il = me.server.list()[i1][i2]
 h=''.join([vId,' ',          vSt,' ',     vIP  ])
 print(h)
-if len(il)==1: m = il['item']
-d=''.join([m[vId],'      ',m[vSt],'   ',m[vIP] ])
-print(d)
+for k,v in il.items():
+    d=''.join([v[vId],'      ',v[vSt],'   ',v[vIP] ])
+    print(d)
 ```
+## BUGS
 
+This code is not compatible with Python 3
+```
+  File "/home/mz0/.local/lib/python3.5/site-packages/atlantic/utils.py", line 36, in _generate_signature
+    sig = hmac.new(key=self.private_key, msg=string_to_sign, digestmod=hashlib.sha256)
+  File "/usr/lib64/python3.5/hmac.py", line 144, in new
+    return HMAC(key, msg, digestmod)
+  File "/usr/lib64/python3.5/hmac.py", line 42, in __init__
+    raise TypeError("key: expected bytes or bytearray, but got %r" % type(key).__name__)
+```
 ## License
 
 This code is provided under an MIT-style license. Please refer to the LICENSE
