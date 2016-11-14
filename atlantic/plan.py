@@ -6,10 +6,9 @@ class AtlanticPlan(AtlanticBase):
 
     def describe(self, plan_name=None, platform=None):
         """
-        This method enables the client to retrieve a list of available
-        cloud server plans, narrow the listing down optionally by server
-        platform (Windows, Linux, etc ), or get information about just
-        one specific plan (e.g. L which represents the large plan)
+        List available cloud server plans, optionally narrow the list
+        down by platform (windows/linux), or describe just one specific
+        plan (e.g. L which represents the large plan)
 
         Link: https://www.atlantic.net/docs/api/?shell#describe-plans
         """
@@ -19,5 +18,5 @@ class AtlanticPlan(AtlanticBase):
         if plan_name:
             params.update({"plan_name": plan_name})
         if platform:
-            params.update({"platform": platform })
+            params.update({"platform": platform})
         return self.request(params)

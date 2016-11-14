@@ -7,8 +7,7 @@ class AtlanticServer(AtlanticBase):
     def run(self, servername, imageid, planname, vm_location,
             enablebackup="N", serverqty=1, cloneimage=None, key_id=None):
         """
-        This method enables you to create new cloud servers by specifying a
-        flexible set of configuration parameters.
+        Create and run a new cloud server.
 
         Link: https://www.atlantic.net/docs/api/?shell#run-instance
         """
@@ -29,8 +28,7 @@ class AtlanticServer(AtlanticBase):
 
     def list(self):
         """
-        This method enables the client to retrieve the list of currently
-        active cloud servers.
+        List currently active cloud servers.
 
         Link: https://www.atlantic.net/docs/api/?shell#list-instances
         """
@@ -41,8 +39,7 @@ class AtlanticServer(AtlanticBase):
 
     def describe(self, instanceid):
         """
-        This method enables the you to retrieve the details of a specific
-        cloud cerver.
+        Get details of a cloud cerver.
 
         Link: https://www.atlantic.net/docs/api/?shell#describe-instance
         """
@@ -54,7 +51,7 @@ class AtlanticServer(AtlanticBase):
 
     def reboot(self, instanceid, reboottype="soft"):
         """
-        This method enables the you to restart a specific cloud server.
+        Restart a cloud server.
 
         Link: https://www.atlantic.net/docs/api/?shell#reboot-instance
         """
@@ -67,7 +64,7 @@ class AtlanticServer(AtlanticBase):
 
     def terminate(self, instanceid):
         """
-        This method enables the you to remove a specific cloud server.
+        Termianate a cloud server.
 
         Link: https://www.atlantic.net/docs/api/?shell#terminate-instance
         """
