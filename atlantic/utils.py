@@ -32,8 +32,9 @@ class AtlanticBase(object):
         timestamp and a random GUID. The encryption needs to be done using
         your API private key.
         """
-        string_to_sign = "%s%s" % (time_since_epoch, random_uuid)
-        sig = hmac.new(key=self.private_key, msg=string_to_sign, digestmod=hashlib.sha256)
+        sign_it = "%s%s" % (time_since_epoch, random_uuid)
+        sib = sign_it.encode()
+        sig = hmac.new(key=self.private_key, msg=sib, digestmod=hashlib.sha256)
         signature = base64.b64encode(sig.digest())
         return signature
 
