@@ -1,4 +1,4 @@
-# Atlantic.net Cloud API Python Bindings
+# Atlantic.net Cloud API in Python
 
 Atlantic.net API is described there:
 https://www.atlantic.net/docs/api/
@@ -12,7 +12,7 @@ pip3 install . --user
 # or
 sudo pip install .
 # or omit cloning
-pip install [-e] git+https://github.com/mz0/atlantic-py.git#egg=atlantic --user
+pip install git+https://github.com/mz0/atlantic-py.git#egg=atlantic --user
 ```
 For the last case options please see:
 https://pip.pypa.io/en/latest/reference/pip_install/#vcs-support
@@ -25,12 +25,14 @@ import atlantic as api
 
 apiPubkey=b'ATL9876543210abcdef01234567890abcde'
 apiPrivkey=b'9876543210abcdef01234567890abcde12345678'
-me=api.Atlantic(apiPubkey,apiPrivkey)
+
 i1='list-instancesresponse'
 i2='instancesSet'
 vId  ='InstanceId'
 vSt  ='vm_status'
 vIP  ='vm_ip_address'
+
+me=api.Atlantic(apiPubkey,apiPrivkey)
 il = me.server.list()[i1][i2]
 
 h=''.join([    vId,' ',          vSt,' ',     vIP  ])
