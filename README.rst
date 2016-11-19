@@ -17,14 +17,13 @@ Install
     # or omit cloning
     pip install git+https://github.com/mz0/atlantic-py.git#egg=atlantic --user
 
-For the last case options please see:
-https://pip.pypa.io/en/latest/reference/pip\_install/#vcs-support
+For the last case options please see `Pip Reference`_
 
 Example
 -------
 
 .. code:: python
-    #!/usr/bin/python
+
     import atlantic as api
 
     apiPubkey=b'ATL9876543210abcdef01234567890abcde'
@@ -46,14 +45,16 @@ Example
         d=''.join([v[vId],'      ',v[vSt],'   ',v[vIP] ])
         print(d)
 
-BUGS
+Bugs
 ----
 
-This code has no test suite. Tested manually on Fedora 24 in Python 2.7/3.5
-Also please note that items() use as above is suboptimal in Python 2.
+- this code has no tests. Tested manually on Fedora 24 in Python 2.7/3.5
+- items() use as above is suboptimal in Python 2
 
 License
 -------
 
-This code is provided under an MIT-style license. Please refer to the LICENSE
-file in the root of the project for specifics.
+This code is provided under an MIT-style license.
+Please refer to the LICENSE file for specifics.
+
+.. _`Pip Reference`: https://pip.pypa.io/en/latest/reference/pip_install/#vcs-support
