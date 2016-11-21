@@ -12,21 +12,17 @@ with open(keyfile) as kf:
 me=api.Atlantic(key['public'],key['private'])
 
 def image_as_tsv(i=None):
-    i1 = 'platform'
-    i2 = 'architecture'
-    i3 = 'imageid'
-
+    pl = 'platform'
+    ii = 'imageid'
     if i is None:
         tsv=''.join([
-        i1,'   \t',
-        i2[:4],'\t',
-        i3,
+        pl,'   \t',
+        ii,
         ])
     else:
-        tsv = ''.join([ 
-        i[i1],'   \t',
-        i[i2],'\t',
-        i[i3],
+        tsv=''.join([
+        i[pl],'   \t',
+        i[ii],
         ])
     return tsv
 
