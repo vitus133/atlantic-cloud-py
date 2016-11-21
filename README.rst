@@ -1,7 +1,8 @@
 Atlantic.net Cloud API in Python
 ================================
 
-Atlantic.net API is described there: https://www.atlantic.net/docs/api/
+Atlantic.net Cloud `API description
+<https://www.atlantic.net/docs/api/>`_
 
 Install
 -------
@@ -15,41 +16,24 @@ Install
     # or
     sudo pip install .
     # or omit cloning
-    pip install git+https://github.com/mz0/atlantic-py.git#egg=atlantic --user
+    pip install git+https://github.com/mz0/atlantic-py.git --user
 
-For the last case options please see `Pip Reference`_
 
 Example
 -------
 
-.. code:: python
+Please see `tests/manual.py`_. This module was checked with these commands:
 
-    import atlantic as api
+::
 
-    apiPubkey=b'ATL9876543210abcdef01234567890abcde'
-    apiPrivkey=b'9876543210abcdef01234567890abcde12345678'
-
-    i1='list-instancesresponse'
-    i2='instancesSet'
-    vId  ='InstanceId'
-    vSt  ='vm_status'
-    vIP  ='vm_ip_address'
-
-    me=api.Atlantic(apiPubkey,apiPrivkey)
-    il = me.server.list()[i1][i2]
-
-    h=''.join([    vId,' ',          vSt,' ',     vIP  ])
-    print(h)
-
-    for k,v in il.items():
-        d=''.join([v[vId],'      ',v[vSt],'   ',v[vIP] ])
-        print(d)
+    python  manual.py ~/atlantic-api.key
+    python3 manual.py ~/atlantic-api.key
 
 Bugs
 ----
 
-- this code has no tests. Tested manually on Fedora 24 in Python 2.7/3.5
-- items() use as above is suboptimal in Python 2
+- this code has no tests. Live-tested on Fedora 24 and Ubuntu 16.10 in Python 2.7/3.5
+- this API hides choice of JSON/XML response format Atlantic.net offers
 
 License
 -------
@@ -57,4 +41,4 @@ License
 This code is provided under an MIT-style license.
 Please refer to the LICENSE file for specifics.
 
-.. _`Pip Reference`: https://pip.pypa.io/en/latest/reference/pip_install/#vcs-support
+.. _`tests/manual.py`: https://github.com/mz0/atlantic-py/blob/master/tests/manual.py
