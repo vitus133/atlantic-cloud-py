@@ -33,6 +33,10 @@ def image_as_tsv(i=None):
 print(image_as_tsv())
     
 images=me.image.describe()['describe-imageresponse']['imagesset']
+
+imagek=sorted(images, key=lambda k: images[k]['imageid'].lower())
+
+for k in imagek:
+    print(image_as_tsv(images[k]))
     
-for k,i in images.items():
-    print(image_as_tsv(i))
+print(len(images))
